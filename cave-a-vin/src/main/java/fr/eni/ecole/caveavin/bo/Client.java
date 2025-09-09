@@ -1,9 +1,6 @@
 package fr.eni.ecole.caveavin.bo;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -29,4 +26,8 @@ public class Client {
 
     @Column(name="FIRST_NAME")
     private String prenom;
+
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
+    @JoinColumn(name = "ADDRESS_ID")
+    private Adresse adresse;
 }
