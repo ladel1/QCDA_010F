@@ -16,4 +16,14 @@ public class User { // utilisateur
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
     private String username;
+
+    @OneToOne(mappedBy="user")
+    private Profile profile;
+
+    public void setProfile(Profile profile){
+        this.profile = profile;
+        if(this.profile!=null){
+            this.profile.setUser(this);
+        }
+    }
 }
