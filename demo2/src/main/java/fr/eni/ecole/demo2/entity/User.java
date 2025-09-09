@@ -17,7 +17,7 @@ public class User { // utilisateur
     private Long id;
     private String username;
 
-    @OneToOne(mappedBy="user")
+    @OneToOne(mappedBy="user",cascade = CascadeType.ALL,orphanRemoval = true)
     private Profile profile;
 
     public void setProfile(Profile profile){
