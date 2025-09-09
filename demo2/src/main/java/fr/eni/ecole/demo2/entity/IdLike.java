@@ -6,12 +6,12 @@ import java.io.Serializable;
 
 @Getter
 @Setter
-@EqualsAndHashCode(of={"user","post"})
+@EqualsAndHashCode(of={"userId","postId"})
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
 @ToString
 public class IdLike implements Serializable {
-    private Long user;
-    private Long post;
+    private Long userId;
+    private Long postId;
 }

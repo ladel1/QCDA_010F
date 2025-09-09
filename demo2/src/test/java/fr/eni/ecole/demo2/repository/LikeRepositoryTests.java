@@ -3,6 +3,7 @@ package fr.eni.ecole.demo2.repository;
 import fr.eni.ecole.demo2.entity.IdLike;
 import fr.eni.ecole.demo2.entity.Like;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
@@ -16,6 +17,7 @@ public class LikeRepositoryTests {
     @Autowired
     private LikeRepository likeRepository;
 
+    @Test
     public void likeTest(){
         // Arrange
         long post = 1L;

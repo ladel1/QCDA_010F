@@ -1,9 +1,6 @@
 package fr.eni.ecole.demo2.entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.time.Instant;
@@ -19,9 +16,11 @@ import java.time.Instant;
 @IdClass(IdLike.class)
 public class Like {
     @Id
-    private Long user;
+    @Column(name="user_id")
+    private Long userId;
 
     @Id
-    private Long post;
+    @Column(name="post_id")
+    private Long postId;
     private Instant createdAt;
 }
