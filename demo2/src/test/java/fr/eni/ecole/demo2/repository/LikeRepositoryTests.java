@@ -22,8 +22,8 @@ public class LikeRepositoryTests {
         // Arrange
         long post = 1L;
         long user = 5L;
-        IdLike id = IdLike.builder().post(post).user(user).build();
-        Like like = Like.builder().post(post).user(user).createdAt(Instant.now()).build();
+        IdLike id = IdLike.builder().postId(post).userId(user).build();
+        Like like = Like.builder().postId(post).userId(user).createdAt(Instant.now()).build();
         likeRepository.save(like);
         // chercher le like
         Like savedLike = likeRepository.findById(id).get();
