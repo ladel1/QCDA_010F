@@ -1,4 +1,4 @@
-package fr.eni.ecole.caveavin.bo;
+package fr.eni.ecole.caveavin.bo.client;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -1,6 +1,6 @@
 package fr.eni.ecole.caveavin.dal;
 
-import fr.eni.ecole.caveavin.bo.Client;
+import fr.eni.ecole.caveavin.bo.client.Client;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
