@@ -1,10 +1,10 @@
-package fr.eni.ecole.caveavin.dal;
+package fr.eni.ecole.caveavin.dal.client;
 
-import fr.eni.ecole.caveavin.bo.client.LignePanier;
 import fr.eni.ecole.caveavin.bo.client.Panier;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface LignePanierRepository extends JpaRepository<LignePanier,Integer> {
+public interface PanierRepository extends JpaRepository<Panier,Integer>
+{
 }

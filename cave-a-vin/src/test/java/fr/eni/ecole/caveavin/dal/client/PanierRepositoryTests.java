@@ -1,4 +1,4 @@
-package fr.eni.ecole.caveavin.dal;
+package fr.eni.ecole.caveavin.dal.client;
 
 import fr.eni.ecole.caveavin.bo.client.LignePanier;
 import fr.eni.ecole.caveavin.bo.client.Panier;
@@ -9,7 +9,6 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ActiveProfiles;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 @SpringBootTest
 @ActiveProfiles("test")

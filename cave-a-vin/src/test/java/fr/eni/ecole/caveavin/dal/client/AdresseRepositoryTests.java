@@ -1,4 +1,4 @@
-package fr.eni.ecole.caveavin.dal;
+package fr.eni.ecole.caveavin.dal.client;
 
 import fr.eni.ecole.caveavin.bo.client.Adresse;
 import fr.eni.ecole.caveavin.bo.client.Client;
