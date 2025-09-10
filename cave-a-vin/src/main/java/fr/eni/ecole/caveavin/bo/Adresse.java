@@ -15,7 +15,7 @@ import lombok.*;
 public class Adresse {
     @Id
     @GeneratedValue(strategy= GenerationType.IDENTITY)
-    @Column(name="ADDRESS_ID")
+    @Column(name="ADDRESS_ID",unique = true)
     Integer id;
     @Column(name="STREET")
     String rue;

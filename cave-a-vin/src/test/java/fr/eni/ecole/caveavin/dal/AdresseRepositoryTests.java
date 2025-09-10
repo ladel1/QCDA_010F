@@ -73,6 +73,7 @@ public class AdresseRepositoryTests {
         Assertions.assertTrue(adresseRepository.findById(adresseId).isEmpty());
     }
 
+    @Transactional
     @Test
     public void orphanRemovalTest(){
         Adresse adresse = Adresse
@@ -92,11 +93,14 @@ public class AdresseRepositoryTests {
                 .build();
 
         clientRepository.save(client);
+        clientRepository.flush();
         Client savedClient = clientRepository.findByPseudo(client.getPseudo());
         int idAdresse = savedClient.getAdresse().getId();
-        savedClient.setAdresse(null);
-        clientRepository.save(savedClient);
 
+        savedClient.setAdresse(null);
+
+        clientRepository.save(savedClient);
+        clientRepository.flush();
         Assertions.assertTrue(adresseRepository.findById(idAdresse).isEmpty());
 
     }

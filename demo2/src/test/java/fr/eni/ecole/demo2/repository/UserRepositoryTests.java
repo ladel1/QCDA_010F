@@ -1,5 +1,6 @@
 package fr.eni.ecole.demo2.repository;
 
+import fr.eni.ecole.demo2.entity.Post;
 import fr.eni.ecole.demo2.entity.Profile;
 import fr.eni.ecole.demo2.entity.User;
 import org.junit.jupiter.api.Assertions;
@@ -42,6 +43,31 @@ public class UserRepositoryTests {
         Assertions.assertEquals(fetchedUser.getUsername(),username);
         Assertions.assertEquals(fetchedUser.getProfile().getFirstname(),firstname);
 
+    }
+
+
+    @Test
+    @Transactional
+    public void ajotuerUserAvecDesPosts(){
+        User user = User.builder()
+                .username("admin")
+                .build();
+
+        Post postFS = Post.builder()
+                .content("Formation Spring,balbalbablabla")
+                .build();
+        Post postTS = Post.builder()
+                .content("Tuto Symfony,balbalbablabla")
+                .build();
+
+        user.getPosts().add(postFS);
+        user.getPosts().add(postTS);
+
+        userRepository.saveAndFlush(user);
+
+        User savedUser = userRepository.findByUsername("admin");
+        Assertions.assertNotNull(savedUser);
+        System.out.println("User: "+savedUser);
     }
 
 }

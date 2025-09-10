@@ -28,6 +28,6 @@ public class Client {
     private String prenom;
 
     @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER,orphanRemoval = true)
-    @JoinColumn(name = "ADDRESS_ID")
+    @JoinColumn(name = "ADDRESS_ID",unique = true)
     private Adresse adresse;
 }
