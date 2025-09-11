@@ -137,7 +137,7 @@ public class FormateursCoursTests {
         Assertions.assertFalse(savedFormateurAdel.isPresent());
 
         long coursCount = coursRepository.count();
-        Assertions.assertEquals(3,coursCount);   
+        Assertions.assertEquals(3,coursCount);
 
     }
 
