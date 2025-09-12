@@ -35,4 +35,14 @@ public class Panier {
     @JoinColumn(name="SHOPPING_CART_ID")
     @Builder.Default
     private List<LignePanier> lignesPanier = new ArrayList<LignePanier>();
+
+    @ManyToOne(cascade = {
+                CascadeType.PERSIST,
+                CascadeType.REFRESH,
+                CascadeType.DETACH,
+                CascadeType.MERGE
+            },
+            fetch = FetchType.EAGER
+    )
+    private Client client;
 }

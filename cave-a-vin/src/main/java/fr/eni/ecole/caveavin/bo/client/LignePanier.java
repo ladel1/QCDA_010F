@@ -1,5 +1,6 @@
 package fr.eni.ecole.caveavin.bo.client;
 
+import fr.eni.ecole.caveavin.bo.vin.Bouteille;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -25,4 +26,8 @@ public class LignePanier {
 
     @Column(name="PRICE",precision=5,scale=2)
     private BigDecimal prix;// BigDecimal pour la précision (nombre de  chiffre total) et scale (nombre de chiffre apres la virgule)
+
+    @ManyToOne
+    @JoinColumn(name="BOTTLE_ID")
+    private Bouteille bouteille;
 }
